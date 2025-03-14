@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Bitcoin Logo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .btc-logo-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+
+        .btc-logo-css {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btc-logo-circle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #f7931a;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 30px rgba(247, 147, 26, 0.7);
+        }
+
+        .btc-logo-circle::after {
+            content: '';
+            position: absolute;
+            width: 85%;
+            height: 85%;
+            border: 6px solid #fff;
+            border-radius: 50%;
+        }
+
+        .btc-logo-symbol {
+            position: relative;
+            color: #fff;
+            font-weight: bold;
+            font-size: 120px;
+            font-family: Arial, sans-serif;
+            z-index: 2;
+            transform: translateY(-5%);
+        }
+
+        .btc-logo-symbol::before {
+            content: 'B';
+            position: relative;
+            z-index: 2;
+        }
+
+        .btc-logo-symbol::after {
+            content: '';
+            position: absolute;
+            top: 45%;
+            left: -15%;
+            width: 130%;
+            height: 10%;
+            background-color: #fff;
+            z-index: 1;
+        }
+
+        .btc-logo-symbol-line {
+            position: absolute;
+            top: 25%;
+            left: -15%;
+            width: 130%;
+            height: 10%;
+            background-color: #fff;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        p {
+            color: #666;
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .sizes {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .size-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .size-32 {
+            width: 32px;
+            height: 32px;
+        }
+
+        .size-64 {
+            width: 64px;
+            height: 64px;
+        }
+
+        .size-128 {
+            width: 128px;
+            height: 128px;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .animated .btc-logo-circle {
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .animated {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 10px rgba(247, 147, 26, 0.6);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 30px rgba(247, 147, 26, 0.9);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 10px rgba(247, 147, 26, 0.6);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="btc-logo-container animated">
+            <div class="btc-logo-css">
+                <div class="btc-logo-circle"></div>
+                <div class="btc-logo-symbol">
+                    <div class="btc-logo-symbol-line"></div>
+                </div>
+            </div>
+        </div>
+        <h1>Pure CSS Bitcoin Logo</h1>
+        <p>This Bitcoin logo is created entirely with CSS. No images are used. It's scalable, animatable, and customizable.</p>
+        
+        <div class="sizes">
+            <div class="size-container">
+                <div class="btc-logo-container size-32">
+                    <div class="btc-logo-css">
+                        <div class="btc-logo-circle"></div>
+                        <div class="btc-logo-symbol">
+                            <div class="btc-logo-symbol-line"></div>
+                        </div>
+                    </div>
+                </div>
+                <span>32px</span>
+            </div>
+            
+            <div class="size-container">
+                <div class="btc-logo-container size-64">
+                    <div class="btc-logo-css">
+                        <div class="btc-logo-circle"></div>
+                        <div class="btc-logo-symbol">
+                            <div class="btc-logo-symbol-line"></div>
+                        </div>
+                    </div>
+                </div>
+                <span>64px</span>
+            </div>
+            
+            <div class="size-container">
+                <div class="btc-logo-container size-128">
+                    <div class="btc-logo-css">
+                        <div class="btc-logo-circle"></div>
+                        <div class="btc-logo-symbol">
+                            <div class="btc-logo-symbol-line"></div>
+                        </div>
+                    </div>
+                </div>
+                <span>128px</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

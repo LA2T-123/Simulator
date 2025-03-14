@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Mining Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-container">
+                    <div class="custom-btc-logo">
+                        <div class="custom-btc-outer">
+                            <div class="custom-btc-inner">
+                                <div class="custom-btc-symbol"></div>
+                            </div>
+                            <div class="custom-btc-shine"></div>
+                            <div class="custom-btc-sparkles">
+                                <div class="custom-btc-sparkle"></div>
+                                <div class="custom-btc-sparkle"></div>
+                                <div class="custom-btc-sparkle"></div>
+                                <div class="custom-btc-sparkle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h1>Bitcoin Mining Simulator</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#simulator" class="active">Simulator</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#stats">Stats</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-logo-container">
+                    <div class="custom-btc-logo">
+                        <div class="custom-btc-outer">
+                            <div class="custom-btc-inner">
+                                <div class="custom-btc-symbol"></div>
+                            </div>
+                            <div class="custom-btc-shine"></div>
+                            <div class="custom-btc-sparkles">
+                                <div class="custom-btc-sparkle"></div>
+                                <div class="custom-btc-sparkle"></div>
+                                <div class="custom-btc-sparkle"></div>
+                                <div class="custom-btc-sparkle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2>Experience Bitcoin Mining</h2>
+                <p>Learn how cryptocurrency mining works with our interactive simulator</p>
+                <a href="#simulator" class="btn">Start Mining</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="simulator" class="simulator">
+        <div class="container">
+            <h2>Mining Simulator</h2>
+            <div class="simulator-container">
+                <div class="mining-controls">
+                    <div class="control-group">
+                        <label for="difficulty">Mining Difficulty:</label>
+                        <input type="range" id="difficulty" min="1" max="5" value="3" disabled>
+                        <span id="difficulty-value">3</span>
+                    </div>
+                    <div class="control-group">
+                        <label for="hashrate">Hash Rate (H/s):</label>
+                        <input type="range" id="hashrate" min="0.00000001" max="0.1" value="0.1" disabled>
+                        <span id="hashrate-value">0.1</span>
+                    </div>
+                    <div class="control-group">
+                        <label for="power">Power Consumption (W):</label>
+                        <input type="range" id="power" min="25" max="25" value="25" disabled>
+                        <span id="power-value">25</span>
+                    </div>
+                    <div class="control-group">
+                        <label for="electricity">Electricity Cost ($/kWh):</label>
+                        <input type="number" id="electricity" value="2" disabled>
+                    </div>
+                    <button id="start-mining" class="btn">Start Mining</button>
+                    <button id="stop-mining" class="btn btn-secondary" disabled>Stop Mining</button>
+                </div>
+                <div class="mining-display">
+                    <div class="mining-stats">
+                        <div class="stat-box">
+                            <h3>Mined Blocks</h3>
+                            <p id="mined-blocks">0</p>
+                        </div>
+                        <div class="stat-box">
+                            <h3>Bitcoin Earned</h3>
+                            <p id="bitcoin-earned">0.00000000 BTC</p>
+                        </div>
+                        <div class="stat-box">
+                            <h3>USD Value</h3>
+                            <p id="usd-value">$0.00</p>
+                        </div>
+                        <div class="stat-box">
+                            <h3>Power Cost</h3>
+                            <p id="power-cost">$0.00</p>
+                        </div>
+                        <div class="stat-box">
+                            <h3>Profit/Loss</h3>
+                            <p id="profit-loss">$0.00</p>
+                        </div>
+                    </div>
+                    <div class="mining-animation">
+                        <div class="mining-rig">
+                            <div class="rig-container">
+                                <div class="rig-gpu"></div>
+                                <div class="rig-gpu"></div>
+                                <div class="rig-gpu"></div>
+                            </div>
+                            <div class="rig-status">
+                                <div class="status-light"></div>
+                                <p id="mining-status">Ready</p>
+                            </div>
+                        </div>
+                        <div class="hash-display">
+                            <h3>Current Hash:</h3>
+                            <p id="current-hash">0000000000000000000000000000000000000000000000000000000000000000</p>
+                            <h3>Target:</h3>
+                            <p id="target-hash">0000000000000000000000000000000000000000000000000000000000000000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2>How Bitcoin Mining Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>1. Computing Power</h3>
+                    <p>Miners use specialized hardware to solve complex mathematical problems. The more computing power (hash rate) you have, the faster you can mine.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h3>2. Proof of Work</h3>
+                    <p>Miners compete to find a specific hash value that meets certain criteria. This process requires significant computational effort.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3>3. Block Creation</h3>
+                    <p>When a miner finds a valid hash, they create a new block in the blockchain and are rewarded with newly minted Bitcoin.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>4. Energy Consumption</h3>
+                    <p>Mining requires electricity to power the hardware. The cost of electricity is a major factor in mining profitability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-logo-container">
+                    <div class="custom-btc-logo">
+                        <div class="custom-btc-outer">
+                            <div class="custom-btc-inner">
+                                <div class="custom-btc-symbol"></div>
+                            </div>
+                            <div class="custom-btc-shine"></div>
+                            <div class="custom-btc-sparkles">
+                                <div class="custom-btc-sparkle"></div>
+                                <div class="custom-btc-sparkle"></div>
+                                <div class="custom-btc-sparkle"></div>
+                                <div class="custom-btc-sparkle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2>About Bitcoin Mining</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>What is Bitcoin Mining?</h3>
+                    <p>Bitcoin mining is the process of validating transactions and adding them to the blockchain, a public ledger that records all Bitcoin transactions. Miners use specialized hardware to solve complex mathematical problems, and in return, they receive newly created bitcoins as a reward.</p>
+                    
+                    <h3>Key Concepts</h3>
+                    <ul>
+                        <li><strong>Proof of Work:</strong> A consensus mechanism that requires miners to prove they have performed computational work.</li>
+                        <li><strong>Hash Rate:</strong> The speed at which a mining machine operates, measured in hashes per second.</li>
+                        <li><strong>Block Reward:</strong> The amount of new bitcoins awarded to miners for successfully mining a block.</li>
+                        <li><strong>Difficulty:</strong> A measure of how hard it is to find a valid hash for a block.</li>
+                    </ul>
+
+                    <h3>Mining Hardware</h3>
+                    <p>Bitcoin mining has evolved from CPU mining to specialized hardware:</p>
+                    <ul>
+                        <li>CPUs (2009-2010)</li>
+                        <li>GPUs (2010-2013)</li>
+                        <li>FPGAs (2011-2013)</li>
+                        <li>ASICs (2013-Present)</li>
+                    </ul>
+
+                    <h3>Mining Pools</h3>
+                    <p>Due to increasing difficulty, individual miners often join mining pools to combine their computational power and share rewards proportionally.</p>
+
+                    <h3>Environmental Impact</h3>
+                    <p>Bitcoin mining consumes significant electricity, leading to concerns about its environmental impact. Many miners are now using renewable energy sources to address these concerns.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1621761191318-c612fb9e8dbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80" alt="Bitcoin Mining Hardware">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stats" class="stats">
+        <div class="container">
+            <h2>Mining Statistics</h2>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>Session Time</h3>
+                    <p id="session-time">00:00:00</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Hashes Calculated</h3>
+                    <p id="hashes-calculated">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Current BTC Price</h3>
+                    <p id="btc-price">$0.00</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Network Difficulty</h3>
+                    <p id="network-difficulty">Medium</p>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="mining-chart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="footer-logo-container">
+                        <div class="custom-btc-logo">
+                            <div class="custom-btc-outer">
+                                <div class="custom-btc-inner">
+                                    <div class="custom-btc-symbol"></div>
+                                </div>
+                                <div class="custom-btc-shine"></div>
+                                <div class="custom-btc-sparkles">
+                                    <div class="custom-btc-sparkle"></div>
+                                    <div class="custom-btc-sparkle"></div>
+                                    <div class="custom-btc-sparkle"></div>
+                                    <div class="custom-btc-sparkle"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>Bitcoin Mining Simulator</h2>
+                </div>
+                <p>This is an educational simulation to demonstrate the concepts of Bitcoin mining. It is not real mining and does not generate actual cryptocurrency.</p>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Bitcoin Mining Simulator. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
